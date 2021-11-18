@@ -1,0 +1,72 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta
+name= "viewport"
+content= "width=device-width, initial-scale= 1, shrink-to-fit=no">
+<link 
+rel="stylesheet"href="{% static "css/bootstrap.min.css"%} ">
+<title>Gagdets</title><body>
+<nav class= "navbar navbar-expand-lg navbar-light bg-light">
+<a class= "navbar-brand" href= "/">Gagdets</a>
+<button
+    class= "navbar-toggler"
+    type= "button"
+    data-toggle= "collapse"
+    data-target= "#navbarSupportedContent">
+    <span class= "navbar-toggler-icon"></span>
+</button>
+<div 
+    class= "collapse navbar-collapse"
+    id= "navbarSupportedContent">
+    <ul class= "navbar-nav mr-auto">
+        <li 
+            class= "nav-item {% if request.path == "/" %}active{% endif %}">
+            <a class= "nav-link" href= "/">Home</a>
+        </li>
+        <li 
+            class= "nav-item {% if request.path == "/about_us/"%}active{% endif %}">
+            <a class= "nav-link" href= "/about_us/">About us</a>
+        </li>
+        <li 
+            class= "nav-item {% if request.path == "/contact-us/"%}active{% endif %}">
+            <a class= "nav-link" href= "/contact-us/">Contact us</a>
+        </li>
+        <li 
+            class= "nav-item {% if request.path == "/signup/"%}active{% endif %}">
+            <a class= "nav-link" href= "/signup/">Signup</a>
+        </li>
+        <li 
+            class= "nav-item {% if request.path == "/login/"%}active{% endif %}">
+            <a class= "nav-link" href= "/login/">Login</a>
+        </li>
+         <li 
+            class= "nav-item {% if request.path == "/address_list/"%}active{% endif %}">
+            <a class= "nav-link" href= "/address/">Your Address</a>
+        </li>
+         <li 
+            class= "nav-item {% if request.path == "basket/"%}active{% endif %}">
+            <a class= "nav-link" href= '/basket/'>Your basket</a>
+        </li> 
+    </ul>
+</div>
+</nav>
+{% if request.basket %}
+    <div>
+        {{request.basket.count}}
+        items in basket 
+    </div>
+{% endif %}
+{%block content%}
+{%endblock content%}
+<script src="{%static "js/jquery.min.js" %}"></script>
+<sript  src="{%static "js/popper.min.js" %}"></script>
+<script src="{%static "js/bootstrap.min.js" %}"></script>
+{% block js%}
+{% endblock js%}
+</body>
+
+</head>
+</html>
