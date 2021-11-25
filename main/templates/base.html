@@ -43,10 +43,6 @@ rel="stylesheet"href="{% static "css/bootstrap.min.css"%} ">
             <a class= "nav-link" href= "/login/">Login</a>
         </li>
          <li 
-            class= "nav-item {% if request.path == "/address_list/"%}active{% endif %}">
-            <a class= "nav-link" href= "/address/">Your Address</a>
-        </li>
-         <li 
             class= "nav-item {% if request.path == "basket/"%}active{% endif %}">
             <a class= "nav-link" href= '/basket/'>Your basket</a>
         </li> 
